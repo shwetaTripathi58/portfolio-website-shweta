@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Java OOPs Concepts</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assests/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assests/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <!-- <a href="index.html" class="logo">
+                    <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Shweta's
+                        Portfolio</span>
+                </a> -->
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Portfolio</h2>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="generic.html">Resume</a></li>
+                <li><a href="generic.html">Projects</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="elements.html">Others</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <header>
+                    <h1>Java 8 Features</h1>
+                    <p>Java 8 introduced several new features and enhancements to the Java programming language, making it more powerful and efficient. Here are some of the key features:</p>
+
+                    <h2>1. Lambda Expressions</h2>
+                    <p>Lambda expressions provide a clear and concise way to represent a method interface using an expression. They are used primarily to define inline implementation of a functional interface.</p>
+                    <h3>Example of Lambda Expressions</h3>
+                    <pre>
+                <code>
+                import java.util.Arrays;
+                import java.util.List;
+
+                public class Main {
+                    public static void main(String[] args) {
+                        List<String> names = Arrays.asList("Shweta", "John", "Alice");
+                        names.forEach(name -> System.out.println(name));
+                    }
+                }
+                </code>
+                    </pre>
+                    <p>In this example, the lambda expression <code>name -> System.out.println(name)</code> is used to iterate and print each name in the list.</p>
+
+                    <h2>2. Stream API</h2>
+                    <p>The Stream API provides a functional approach to processing collections of data. It allows operations like filtering, mapping, and reducing data in a declarative way.</p>
+                    <h3>Example of Stream API</h3>
+                    <pre>
+                <code>
+                import java.util.Arrays;
+                import java.util.List;
+
+                public class Main {
+                    public static void main(String[] args) {
+                        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+                        numbers.stream()
+                               .filter(n -> n % 2 == 0)
+                               .forEach(System.out::println);
+                    }
+                }
+                </code>
+                    </pre>
+                    <p>Here, the Stream API is used to filter even numbers from the list and print them.</p>
+
+                    <h2>3. Default Methods</h2>
+                    <p>Default methods allow interfaces to have methods with a default implementation. This helps in adding new methods to interfaces without breaking existing implementations.</p>
+                    <h3>Example of Default Methods</h3>
+                    <pre>
+                <code>
+                interface Vehicle {
+                    default void start() {
+                        System.out.println("Vehicle is starting");
+                    }
+                }
+
+                class Car implements Vehicle {
+                    // No need to override the start method
+                }
+
+                public class Main {
+                    public static void main(String[] args) {
+                        Vehicle car = new Car();
+                        car.start();
+                    }
+                }
+                </code>
+                    </pre>
+                    <p>In this example, the <code>start</code> method is a default method in the <code>Vehicle</code> interface.</p>
+
+                    <h2>4. Functional Interfaces</h2>
+                    <p>A functional interface is an interface that contains exactly one abstract method. They can be used with lambda expressions and method references.</p>
+                    <h3>Example of Functional Interfaces</h3>
+                    <pre>
+                <code>
+                import java.util.function.Predicate;
+
+                public class Main {
+                    public static void main(String[] args) {
+                        Predicate<Integer> isEven = n -> n % 2 == 0;
+                        System.out.println(isEven.test(4)); // true
+                        System.out.println(isEven.test(5)); // false
+                    }
+                }
+                </code>
+                    </pre>
+                    <p>Here, the <code>Predicate</code> functional interface is used to test if a number is even.</p>
+
+                    <h2>5. Optional Class</h2>
+                    <p>The <code>Optional</code> class is a container object that may or may not contain a non-null value. It helps to avoid <code>NullPointerException</code>.</p>
+                    <h3>Example of Optional Class</h3>
+                    <pre>
+                <code>
+                import java.util.Optional;
+
+                public class Main {
+                    public static void main(String[] args) {
+                        Optional<String> name = Optional.ofNullable(null);
+                        System.out.println(name.orElse("Default Name"));
+                    }
+                }
+                </code>
+                    </pre>
+                    <p>In this example, the <code>Optional</code> class is used to provide a default value if the value is null.</p>
+
+                    <h2>6. Date and Time API</h2>
+                    <p>The new Date and Time API provides a comprehensive and flexible way to handle date and time in Java.</p>
+                    <h3>Example of Date and Time API</h3>
+                    <pre>
+                <code>
+                import java.time.LocalDate;
+                import java.time.LocalTime;
+                import java.time.LocalDateTime;
+
+                public class Main {
+                    public static void main(String[] args) {
+                        LocalDate date = LocalDate.now();
+                        LocalTime time = LocalTime.now();
+                        LocalDateTime dateTime = LocalDateTime.now();
+
+                        System.out.println("Date: " + date);
+                        System.out.println("Time: " + time);
+                        System.out.println("DateTime: " + dateTime);
+                    }
+                }
+                </code>
+                    </pre>
+                    <p>Here, the new Date and Time API is used to get the current date, time, and date-time.</p>
+                </header>
+                </header>
+                <!-- <section class="tiles">
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic01.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Magna</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="images/pic02.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Lorem</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="images/pic03.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Feugiat</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="images/pic04.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Tempus</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style5">
+									<span class="image">
+										<img src="images/pic05.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Aliquam</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style6">
+									<span class="image">
+										<img src="images/pic06.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Veroeros</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="images/pic07.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Ipsum</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="images/pic08.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Dolor</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic09.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Nullam</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style5">
+									<span class="image">
+										<img src="images/pic10.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Ultricies</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style6">
+									<span class="image">
+										<img src="images/pic11.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Dictum</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="images/pic12.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Pretium</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+							</section> -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <!-- <div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div> -->
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assests/js/jquery.min.js"></script>
+    <script src="assests/js/browser.min.js"></script>
+    <script src="assests/js/breakpoints.min.js"></script>
+    <script src="assests/js/util.js"></script>
+    <script src="assests/js/main.js"></script>
+
+</body>
+
+</html>
