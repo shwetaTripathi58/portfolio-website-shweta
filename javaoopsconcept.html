@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Java OOPs Concepts</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assests/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assests/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <!-- <a href="index.html" class="logo">
+                    <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Shweta's
+                        Portfolio</span>
+                </a> -->
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Portfolio</h2>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="generic.html">Resume</a></li>
+                <li><a href="generic.html">Projects</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="elements.html">Others</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <header>
+                    <h1>Java OOPs Concepts</h1>
+                    <p>Object-Oriented Programming (OOP) is a programming paradigm that provides a way to structure
+                        programs using objects, which can contain data and methods. Java is a widely-used programming
+                        language that follows the OOP principles. The four main concepts of OOP in Java are:</p>
+
+                    <h2>1. Encapsulation</h2>
+                    <p>Encapsulation is the process of wrapping data (variables) and methods (functions) together as a
+                        single unit. In Java, encapsulation is achieved by declaring the variables of a class as private
+                        and providing public getter and setter methods to access and update the values of private
+                        variables.</p>
+                    <h3>Example of Encapsulation</h3>
+                    <pre>
+    <code>
+    class Student {
+        private String name;
+    
+        // Getter method
+        public String getName() {
+            return name;
+        }
+    
+        // Setter method
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Student student = new Student();
+            student.setName("Shweta");
+            System.out.println(student.getName());
+        }
+    }
+    </code>
+                                    </pre>
+                    <p>In this example, the <code>name</code> variable is private, and we use public getter and setter
+                        methods to access and modify it, ensuring encapsulation.</p>
+
+                    <h2>2. Inheritance</h2>
+                    <p>Inheritance is a mechanism where one class acquires the properties and behaviors of another
+                        class. It allows for code reusability and establishes a parent-child relationship between
+                        classes. In Java, inheritance is implemented using the <code>extends</code> keyword.</p>
+
+
+
+                    <h3>Example of Inheritance</h3>
+                    <pre>
+<code>
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
+        dog.bark();
+    }
+}
+</code>
+                                </pre>
+                    <p>Here, the <code>Dog</code> class inherits the <code>eat</code> method from the
+                        <code>Animal</code> class, demonstrating inheritance.
+                    </p>
+
+
+
+
+                    <h2>3. Polymorphism</h2>
+                    <p>Polymorphism allows methods to perform different tasks based on the object that calls them. It is
+                        of two types:</p>
+                    <h3>Example of Polymorphism</h3>
+                    <pre>
+    <code>
+    // Compile-time Polymorphism
+    class Calculator {
+        int add(int a, int b) {
+            return a + b;
+        }
+    
+        int add(int a, int b, int c) {
+            return a + b + c;
+        }
+    }
+    
+    // Runtime Polymorphism
+    class Animal {
+        void sound() {
+            System.out.println("This animal makes a sound.");
+        }
+    }
+    
+    class Cat extends Animal {
+        @Override
+        void sound() {
+            System.out.println("The cat meows.");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            // Compile-time Polymorphism
+            Calculator calc = new Calculator();
+            System.out.println(calc.add(2, 3));
+            System.out.println(calc.add(2, 3, 4));
+    
+            // Runtime Polymorphism
+            Animal animal = new Cat();
+            animal.sound();
+        }
+    }
+    </code>
+                                    </pre>
+                    <p>The first part demonstrates method overloading (compile-time polymorphism), while the second part
+                        shows method overriding (runtime polymorphism).</p>
+                    <ul>
+                        <li><strong>Compile-time Polymorphism:</strong> Achieved through method overloading.</li>
+                        <li><strong>Runtime Polymorphism:</strong> Achieved through method overriding.</li>
+                    </ul>
+
+                    <h2>4. Abstraction</h2>
+                    <p>Abstraction is the process of hiding implementation details and showing only the functionality to
+                        the user. In Java, abstraction is achieved using abstract classes and interfaces.</p>
+
+                    <p>These OOP concepts form the foundation of Java programming and are essential for building robust
+                        and scalable applications.</p>
+                    <h3>Example of Abstraction</h3>
+                    <pre>
+    <code>
+    // Abstract class
+    abstract class Shape {
+        abstract void draw();
+    }
+    
+    class Circle extends Shape {
+        void draw() {
+            System.out.println("Drawing a circle.");
+        }
+    }
+    
+    class Rectangle extends Shape {
+        void draw() {
+            System.out.println("Drawing a rectangle.");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Shape shape1 = new Circle();
+            shape1.draw();
+    
+            Shape shape2 = new Rectangle();
+            shape2.draw();
+        }
+    }
+    </code>
+                                    </pre>
+                    <p>In this example, the abstract class <code>Shape</code> provides a blueprint for its subclasses,
+                        which implement the <code>draw</code> method, demonstrating abstraction.</p>
+                </header>
+                <!-- <section class="tiles">
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic01.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Magna</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="images/pic02.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Lorem</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="images/pic03.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Feugiat</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="images/pic04.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Tempus</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style5">
+									<span class="image">
+										<img src="images/pic05.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Aliquam</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style6">
+									<span class="image">
+										<img src="images/pic06.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Veroeros</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="images/pic07.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Ipsum</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="images/pic08.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Dolor</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic09.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Nullam</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style5">
+									<span class="image">
+										<img src="images/pic10.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Ultricies</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style6">
+									<span class="image">
+										<img src="images/pic11.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Dictum</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="images/pic12.jpg" alt="" />
+									</span>
+									<a href="generic.html">
+										<h2>Pretium</h2>
+										<div class="content">
+											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+										</div>
+									</a>
+								</article>
+							</section> -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <!-- <div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div> -->
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assests/js/jquery.min.js"></script>
+    <script src="assests/js/browser.min.js"></script>
+    <script src="assests/js/breakpoints.min.js"></script>
+    <script src="assests/js/util.js"></script>
+    <script src="assests/js/main.js"></script>
+
+</body>
+
+</html>
